@@ -150,6 +150,14 @@ PlaneFlight::~PlaneFlight()
 {
 	delete [] seats;
 }
+
+/*
+operator= 
+Expression --- a @ b 
+Function member --- A::operator@(B)
+Not Global function 
+*where a is an object of classA, b is an object of class B*
+*/
 PlaneFlight& PlaneFlight::operator=(const PlaneFlight& obj)
 {
 	if(this != &obj)
