@@ -28,7 +28,7 @@ PlaneFlight::PlaneFlight(int capacity)
 }
 //add copyConstructor
  
-PlaneFlight& PlaneFlight::operator=(const PlaneFlight& obj)
+PlaneFlight::PlaneFlight(const PlaneFlight& obj)
 {
 	
 	cout << "in copy constructor\n";
@@ -139,13 +139,26 @@ bool PlaneFlight::validSeatNum(int seatNo)const
 {
 	return seatNo >= 0 && seatNo < SIZE;
 }
-/*
-ostream& operator<<(ostream& out, const PlaneFlight)
-{	
-	out 
 
+ostream& operator<<(ostream& out, const PlaneFlight& obj )
+{	
+	out << "Seats Info";
+	for(int i = 0; i < obj.cap; i++)
+	{
+		if(seats[i] == 0)
+		{
+			out << i << ":empty\n";
+		}
+		else if(seats[i] == 1)
+		{
+			out << i << ":full\n";
+		}
+	}
+	out << "// ";
+	
+	return out*
 }
-*/
+
 PlaneFlight::~PlaneFlight()
 {
 	delete [] seats;
@@ -160,7 +173,7 @@ Not Global function
 */
 PlaneFlight& PlaneFlight::operator=(const PlaneFlight& obj)
 {
-	if(this != &obj)
+	if(this != &obj)//inorder to avoid to delete caller itself 
 	{
 		count = obj.count;
 		cap = obj.cap;
@@ -170,6 +183,7 @@ PlaneFlight& PlaneFlight::operator=(const PlaneFlight& obj)
 		{
 			seats[i] = obj.seats[i];
 		}
-		return *this;
+		return *this;//the reason why we retrun *this(this pointer) 
+			     //is make TWO objects refer to the same object!
 	}
 }

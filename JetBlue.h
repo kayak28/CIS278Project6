@@ -1,6 +1,6 @@
 #include"PlaneFlight.h"
 
-class JetBlue
+class JetBlue:public PlaneFlight
 {
 	public: 
 		JetBlue();
