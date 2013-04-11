@@ -26,7 +26,24 @@ PlaneFlight::PlaneFlight(int capacity)
 		seats[index] = 0;
 	} 
 }
-
+//add copyConstructor
+ 
+PlaneFlight& PlaneFlight::operator=(const PlaneFlight& obj)
+{
+	
+	cout << "in copy constructor\n";
+	if(this != &obj)
+	{
+		count = obj.count;
+		cap = obj.cap;
+		seats = new int[cap];
+		for(int i = 0; i < count; i++)
+		{
+			seats[i] = obj.seats[i];
+		}
+		//return *this;
+	}
+}
 
 
 /*effect: determine if all seats are full
