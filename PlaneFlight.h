@@ -1,21 +1,29 @@
 //PlaneFlight.h
 
+#include<iostream>
 const int SIZE = 10;
-
+using namespace std;//without this line, error: ostream does not name a type 
 class PlaneFlight
 {
 	public:
 		PlaneFlight();
+		PlaneFlight(int capacity);//added
+		PlaneFlight(const PlaneFlight& obj);//added copy constructor
+	
+		~PlaneFlight();
+		
 		bool isFull() const;
 		bool isEmpty() const;
 		bool seatVacant(int seatNo)const;
-		bool reserveSeat(int seatNo)const;
-		void canselSeat(int seatNo);
-		bool varidSeat(int seatNo)const;
-
+		void reserveSeat(int seatNo);
+		void cancelSeat(int seatNo);
+		bool validSeatNum(int seatNo)const;
+		friend ostream &operator<<(ostream &out, const PlaneFlight& obj);
+		PlaneFlight& operator=(const PlaneFlight& obj);
 	private: 
 		int* seats;//[;ame seats(0-empry; 1-full)
 		int count;//number of reservation made
+		int cap;
 
 };//class
 
