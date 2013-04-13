@@ -53,7 +53,7 @@ PlaneFlight::PlaneFlight(const PlaneFlight& obj)
 */
 bool PlaneFlight::isFull() const
 {	
-	return count == SIZE;
+	return count == cap;
 }//isFull
 
 /*effect: dertermine if all sears are empty
@@ -63,6 +63,16 @@ bool PlaneFlight::isEmpty() const
 {
 	return count == 0;
 }
+
+int PlaneFlight::getCapacity() const
+{
+	return cap; 
+}
+int PlaneFlight::getCount() const
+{
+	return count;
+}
+
 
 /*effect: determine if seatNo is a avaiable seat or not
 *return: true avaiable; otherwise false
@@ -96,8 +106,10 @@ bool PlaneFlight::seatVacant(int seatNo) const
 */
 void PlaneFlight::reserveSeat(int seatNo)
 {
+	/*
 	if(isFull())
 	{
+		cout << "ensure capacity because of fullness of seats...?";
 		int* temp = new int[cap * 2];
 		for(int i = 0; i < cap -1; i++)
 		{
@@ -107,8 +119,25 @@ void PlaneFlight::reserveSeat(int seatNo)
 		seats = temp; 
 		cap = cap*2;
 	}
-	seats[seatNo] = 1;
-	count++;
+	*/
+	if(validSeatNum(seatNo))
+	{
+		if(seats[seatNo] == 1)
+		{
+			cout << "already reserved\n";
+			cout << count;
+		}
+		else 
+		{
+			seats[seatNo] = 1;
+			count++;
+			cout << "success!!\n" << "count = " << count << "\n";
+			cout << "seats["<< seatNo << "] = " << seats[seatNo] << "\n"; 		    	 	}
+	}
+	else
+	{
+		cout << "because of invaild seatNo, cannot make reserve a seat\n";
+	}
 }
 
 /*effect: cancel(unreserve) a seat numbered seatNo
@@ -118,19 +147,36 @@ void PlaneFlight::reserveSeat(int seatNo)
 */
 void PlaneFlight::cancelSeat(int seatNo)
 {
-	int index = 0;
-	while(index < count && seats[index] != seatNo)
+	//int index = 0;
+	/*while(index < count && seats[index] != seatNo)
 	{
 		index++;
 	}
 	if(index < count)
 	{	
+		cout << "found a seat that is deleted";	
 		seats[index] == 0;
+		count--;
 		for(int i = index++; i <= index -1; i++)
 		{
-			seats[i - 1] = seats[i];
+			cout << "seat: "<< i << "=" << seats[i];
+		//	seats[i - 1] = seats[i];
 		}
+		
+	}
+	*/
+
+	if(validSeatNum(seatNo) && seats[seatNo] == 1)
+	{
+		cout << "found canceled seat ";
+		seats[seatNo] = 0;
 		count--;
+		cout << "count = " << count << "\n";
+		cout << "seats[seatNo] = " << seats[seatNo] <<"\n";  	
+	}
+	else
+	{
+		cout << "not cancel";
 	}
 }
 
@@ -144,7 +190,7 @@ bool PlaneFlight::validSeatNum(int seatNo)const
 
 ostream& operator<<(ostream& out, const PlaneFlight& obj )
 {	
-	out << "Seats Info\n";
+	out << "\n---Seats Info---\n";
 	for(int i = 0; i < obj.cap; i++)
 	{
 		if(obj.seats[i] == 0)
@@ -161,7 +207,7 @@ ostream& operator<<(ostream& out, const PlaneFlight& obj )
 		}
 
 	}
-	out << "// ";
+	out << " ";
 	
 	return out ;
 }

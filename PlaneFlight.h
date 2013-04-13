@@ -20,6 +20,8 @@ class PlaneFlight
 		bool validSeatNum(int seatNo)const;
 		friend ostream &operator<<(ostream &out, const PlaneFlight& obj);
 		PlaneFlight& operator=(const PlaneFlight& obj);
+		int getCapacity()const;
+		int getCount()const;
 	private: 
 		int* seats;//[;ame seats(0-empry; 1-full)
 		int count;//number of reservation made
