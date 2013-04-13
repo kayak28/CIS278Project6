@@ -9,7 +9,7 @@ int main()
 
 	for(int i = 0; i < 7; i++)
 	{
-		if(p1.validSeatNum(i))
+		if(p1.seatVacant(i))
 		{	
 			cout << "valid\n";
 		}

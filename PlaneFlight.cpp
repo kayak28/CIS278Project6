@@ -83,7 +83,7 @@ bool PlaneFlight::seatVacant(int seatNo) const
 	}
 	else
 	{
-		cout << "invalid seatNo";
+		cout << "--invalid seatNo--\n";
 		return false;
 	}
 
