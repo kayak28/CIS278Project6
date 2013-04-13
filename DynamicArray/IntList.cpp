@@ -28,7 +28,7 @@ IntList::IntList(const IntList& obj)
 //make a current condtion of array's copy
 }
 
-intList::lengthIs()
+int IntList::lengthIs()
 {
 	//return current array length, NOT actual length of array
 	return howmany;
@@ -112,7 +112,7 @@ IntList IntList::operator+(IntList obj)
 	{
 		temp[i] = data[i];
 	}
-	int targetindex = howmany;
+	int targetIndex = howmany;
 	for(int j = 0; j < obj.howmany; j++)
 	{
 		temp[targetIndex] = obj.data[j];
