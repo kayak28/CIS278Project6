@@ -7,12 +7,12 @@ JetBlue::JetBlue()
 	//nothing to do since there is no new variables
 }
 
-JetBlue::JetBlue(int capacity):PlaneFlight(int capacity) 
+JetBlue::JetBlue(int capacity) : public PlaneFlight(int capacity) 
 {
 	//Nothing to do since there is no new variables
 }
 
-int JetBlue::seatLeft()const
+int JetBlue::seatsLeft()const
 {
 	int left = 0;
 	left = this->getCapacity() - this->getCount();
@@ -36,7 +36,7 @@ int JetBlue::furthestFront()const
 }
 
 
-int JetBlue::furthesrRear()const
+int JetBlue::furthestRear()const
 {
 	for(int i = this->getCapacity(); i >= 0; i--)
 	{
