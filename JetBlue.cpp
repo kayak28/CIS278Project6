@@ -7,7 +7,7 @@ JetBlue::JetBlue()
 	//nothing to do since there is no new variables
 }
 
-JetBlue::JetBlue(int capacity) : public PlaneFlight(int capacity) 
+JetBlue::JetBlue(int capacity):PlaneFlight(capacity) 
 {
 	//Nothing to do since there is no new variables
 }
