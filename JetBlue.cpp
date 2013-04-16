@@ -4,11 +4,13 @@ using namespace std;
 
 JetBlue::JetBlue()
 {
+	cout << "no arg const";
 	//nothing to do since there is no new variables
 }
 
 JetBlue::JetBlue(int capacity):PlaneFlight(capacity) 
 {
+	cout << "one arg const";
 	//Nothing to do since there is no new variables
 }
 
@@ -26,11 +28,11 @@ int JetBlue::furthestFront()const
 	{
 		if(seatVacant(i))
 		{
-			return true;
+			return i;
 		}
 		else
 		{
-			return false;
+			return -1;
 		}
 	}
 }
@@ -42,11 +44,11 @@ int JetBlue::furthestRear()const
 	{
 		if(seatVacant(i))
 		{
-			return true;	
+			return i;	
 		}
 		else
 		{
-			return false;
+			return -1;
 		}
 	}
  
