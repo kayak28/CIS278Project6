@@ -1,8 +1,9 @@
-Exe : PlaneFlight.o PlaneTest.o
-	g++ -o Exe PlaneFlight.o PlaneTest.o
 JetBlue.o : JetBlue.cpp 
 	g++ -c JetBlue.cpp
-AppsJet.o : AppsJet.cpp
-	g++ -c AppsJet.cpp
+AppsJet.o : mainJet.cpp
+	g++ -c mainJet.cpp
 PlaneFlight.o : PlaneFlight.cpp
-	g++ -c PlaneFlight.cpp 
+	g++ -c PlaneFlight.cpp
+run : JetBlue.o mainJet.o
+	g++ -o Exe JetBlue.o mainJet.o PlaneFlight.o
+

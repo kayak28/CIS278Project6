@@ -1,6 +1,5 @@
 #include<iostream>
 #include"JetBlue.h"
-#include "PlaneFlight.h"
 using namespace std;
 
 int main()
