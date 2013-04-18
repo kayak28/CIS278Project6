@@ -1,7 +1,6 @@
 //PlaneFlight.h
 
 #include<iostream>
-const int SIZE = 10;
 using namespace std;//without this line, error: ostream does not name a type 
 class PlaneFlight
 {
@@ -26,7 +25,7 @@ class PlaneFlight
 		int* seats;//[;ame seats(0-empry; 1-full)
 		int count;//number of reservation made
 		int cap;
-
+		static const int SIZE = 10;
 };//class
 
 

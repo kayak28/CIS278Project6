@@ -10,7 +10,7 @@ PlaneFlight::PlaneFlight()
 	seats = new int[cap];
 	count = 0;
 	//initialize all seats to empty
-	for(int index = 0; index < SIZE; index++)
+	for(int index = 0; index < cap; index++)
 	{
 		seats[index] = 0;
 	} 
@@ -39,7 +39,7 @@ PlaneFlight::PlaneFlight(const PlaneFlight& obj)
 		count = obj.count;
 		cap = obj.cap;
 		seats = new int[cap];
-		for(int i = 0; i < count; i++)
+		for(int i = 0; i < cap; i++)
 		{
 			seats[i] = obj.seats[i];
 		}
