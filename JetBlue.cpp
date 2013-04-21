@@ -36,10 +36,11 @@ int JetBlue::furthestFront()const
 
 int JetBlue::furthestRear()const
 {
-	for(int i = this->getCapacity(); i >= 0; i--)
+	for(int i = this->getCapacity() - 1; i >= 0; i--)
 	{
 		if(seatVacant(i))
-		{
+		{ 
+			cout << "i = " << i << "\n";
 			return i;	
 		}
 	}

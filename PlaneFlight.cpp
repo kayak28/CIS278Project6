@@ -80,16 +80,26 @@ int PlaneFlight::getCount() const
 */
 bool PlaneFlight::seatVacant(int seatNo) const
 {
-
 	if(validSeatNum(seatNo))
 	{
-		return seats[seatNo] == 0;
+		if(seats[seatNo] == 0) 
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	else
-	{
-		cout << "valid seat num is invalid\n";
+	{/*
+		cout << "--invalid seatNo--from seat vacant\n";
+		cout << "seat no = "<< seatNo; 
 		return false;
+	*/
 	}
+
+	return seats[seatNo] == 0;
 }
 
 /*effect: reserve the seat numbered seatNo 
@@ -138,26 +148,7 @@ void PlaneFlight::reserveSeat(int seatNo)
 *postcondtion- seatNo is now available
 */
 void PlaneFlight::cancelSeat(int seatNo)
-{
-	//int index = 0;
-	/*while(index < count && seats[index] != seatNo)
-	{
-		index++;
-	}
-	if(index < count)
-	{	
-		cout << "found a seat that is deleted";	
-		seats[index] == 0;
-		count--;
-		for(int i = index++; i <= index -1; i++)
-		{
-			cout << "seat: "<< i << "=" << seats[i];
-		//	seats[i - 1] = seats[i];
-		}
-		
-	}
-	*/
-
+{	
 	if(validSeatNum(seatNo) && seats[seatNo] == 1)
 	{
 		cout << "found canceled seat ";

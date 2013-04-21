@@ -41,7 +41,7 @@ int main()
 			case 2://isEmpty
 				if(j2.isEmpty())
 				{
-					cout << "Seats are empty\n";
+					cout << "Seats is empty\n";
 				}
 				else
 				{
@@ -62,7 +62,7 @@ int main()
 				j2.reserveSeat(j2.furthestFront());
 				break;
 			case 5:
-				cout << "\n";
+				cout << "\naction =" << action << "\n";
 				cout << "Further Rear " << j2.furthestRear() <<"\n";
 				j2.reserveSeat(j2.furthestRear());
 				cout  << "\n";
