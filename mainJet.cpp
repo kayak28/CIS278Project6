@@ -41,7 +41,7 @@ int main()
 			case 2://isEmpty
 				if(j2.isEmpty())
 				{
-					cout << "Seats is empty\n";
+					cout << "Seats are empty\n";
 				}
 				else
 				{
