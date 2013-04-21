@@ -16,7 +16,7 @@ int main()
 	
 	do
 	{
-		cout << "1: check the fullness of this plane\n";
+		cout << "\n1: check the fullness of this plane\n";
 		cout << "2: check the emptyness of this plane\n";
 		cout << "3: reserve a seat\n";
 		cout << "4: reserve the furthest fron seat\n";
@@ -45,17 +45,17 @@ int main()
 				}
 				else
 				{
-					cout << "Seats is not Empty\n";
+					cout << "some seats are reserved\n";
 				}
 				break;
 			case 3:
 				seatNo = 0;
-				cout << "reserve a seat";
-				cout << "enter the seat number";
+				cout << "reserve a seat\n";
+				cout << "enter the seat number\n";
 				cin >> seatNo;
 				j2.reserveSeat(seatNo);
 				seatNo = 0;
-				
+				break;	
 			case 4:
 				cout << "reserve furthest front\n";
 				cout << "Further front " << j2.furthestFront() << "\n";

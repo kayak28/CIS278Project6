@@ -80,7 +80,7 @@ int PlaneFlight::getCount() const
 */
 bool PlaneFlight::seatVacant(int seatNo) const
 {
-	if(validSeatNum(seatNo))
+/*	if(validSeatNum(seatNo))
 	{
 		if(seats[seatNo] == 0) 
 		{
@@ -93,11 +93,26 @@ bool PlaneFlight::seatVacant(int seatNo) const
 	}
 	else
 	{
-		cout << "--invalid seatNo--\n";
+		cout << "--invalid seatNo--from seat vacant\n";
+		cout << "seat no = "<< seatNo; 
 		return false;
 	}
 
-	return seats[seatNo] == 0;
+
+
+
+
+	return seats[seatNo] == 0;*/
+
+	if(validSeatNum(seatNo))
+	{
+		return seats[seatNo] == 0;
+	}
+	else
+	{
+		cout << "valid seat num is invalid\n";
+		return false;
+	}
 }
 
 /*effect: reserve the seat numbered seatNo 

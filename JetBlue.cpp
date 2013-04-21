@@ -10,7 +10,7 @@ JetBlue::JetBlue()
 
 JetBlue::JetBlue(int capacity):PlaneFlight(capacity) 
 {
-	cout << "one arg const";
+	//cout << "one arg const";
 	//Nothing to do since there is no new variables
 }
 
@@ -30,10 +30,6 @@ int JetBlue::furthestFront()const
 		{
 			return i;
 		}
-		else
-		{
-			return -1;
-		}
 	}
 }
 
@@ -45,10 +41,6 @@ int JetBlue::furthestRear()const
 		if(seatVacant(i))
 		{
 			return i;	
-		}
-		else
-		{
-			return -1;
 		}
 	}
  
