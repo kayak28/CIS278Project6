@@ -18,7 +18,7 @@ PlaneFlight::PlaneFlight()
 //add one arg constructor 
 PlaneFlight::PlaneFlight(int capacity)
 {	
-	cout << "one arg const\n cap = " << capacity << "\n";
+	cout << "one arg const\ncap = " << capacity << "\n";
 	seats = new int[capacity];
 	count = 0;
 	cap = capacity;
@@ -92,11 +92,11 @@ bool PlaneFlight::seatVacant(int seatNo) const
 		}
 	}
 	else
-	{/*
+	{
 		cout << "--invalid seatNo--from seat vacant\n";
 		cout << "seat no = "<< seatNo; 
 		return false;
-	*/
+	
 	}
 
 	return seats[seatNo] == 0;
@@ -108,20 +108,6 @@ bool PlaneFlight::seatVacant(int seatNo) const
 */
 void PlaneFlight::reserveSeat(int seatNo)
 {
-	/*
-	if(isFull())
-	{
-		cout << "ensure capacity because of fullness of seats...?";
-		int* temp = new int[cap * 2];
-		for(int i = 0; i < cap -1; i++)
-		{
-			temp[i] = seats[i];
-		}
-		delete[] seats;
-		seats = temp; 
-		cap = cap*2;
-	}
-	*/
 	if(validSeatNum(seatNo))
 	{
 		if(seats[seatNo] == 1)

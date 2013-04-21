@@ -40,7 +40,6 @@ int JetBlue::furthestRear()const
 	{
 		if(seatVacant(i))
 		{ 
-			cout << "i = " << i << "\n";
 			return i;	
 		}
 	}
